@@ -9,6 +9,7 @@ temp.docx
 temp_repaired.docx
 
 *.pdf
+!data/methods/**/*.pdf
 
 .vscode/
 
