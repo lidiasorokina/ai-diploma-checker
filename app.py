@@ -1063,8 +1063,8 @@ if st.button("📄 Сгенерировать и скачать PDF-отчёт",
                 import os
                 import re
 
-                font_path = "C:/Windows/Fonts/arial.ttf"
-                bold_font_path = "C:/Windows/Fonts/arialbd.ttf"
+                font_path = os.path.join("fonts", "arial.ttf")
+                bold_font_path = os.path.join("fonts", "arialbd.ttf")
 
                 pdfmetrics.registerFont(TTFont("Arial", font_path))
                 pdfmetrics.registerFont(TTFont("Arial-Bold", bold_font_path))
