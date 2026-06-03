@@ -80,7 +80,9 @@ def analyze_intro(text: str, method_text: str):
 """
 
     models = [
-        "openrouter/free"
+        "openai/gpt-oss-120b:free",
+        "google/gemma-4-31b-it:free",
+        "openai/gpt-oss-20b:free"
     ]
 
     for model_name in models:
@@ -109,18 +111,13 @@ def analyze_intro(text: str, method_text: str):
 
             content = response.choices[0].message.content
 
-            if not content:
-                return (
-                    "Ошибка: OpenRouter вернул пустой ответ.\n"
-                    f"Модель: {model_name}\n"
-                    f"Ответ API: {response}"
-                )
+            if content:
+                return content
 
-            return content
+            continue
 
         except Exception as e:
+            print(f"Ошибка модели {model_name}: {e}")
+            continue
 
-            return (
-                f"Ошибка модели {model_name}:\n"
-                f"{str(e)}"
-            )
+    return "Ошибка: все LLM модели временно недоступны"

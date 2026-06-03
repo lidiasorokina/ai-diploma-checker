@@ -136,7 +136,7 @@ def analyze_conclusion(text, method_text):
         "google/gemma-4-31b-it:free",
         "openai/gpt-oss-20b:free"
     ]
-    
+
     for model_name in models:
         try:
             response = client.chat.completions.create(
