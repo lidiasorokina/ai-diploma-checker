@@ -80,8 +80,7 @@ def analyze_intro(text: str, method_text: str):
 """
 
     models = [
-        "openai/gpt-oss-120b:free",
-        "google/gemma-2-9b-it:free",
+        "google/gemma-3-27b-it:free",
         "meta-llama/llama-3.2-3b-instruct:free"
     ]
 
