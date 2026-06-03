@@ -80,7 +80,7 @@ def analyze_intro(text: str, method_text: str):
 """
 
     models = [
-        "google/gemma-3-27b-it:free",
+        "openrouter/free",
         "meta-llama/llama-3.2-3b-instruct:free"
     ]
 
