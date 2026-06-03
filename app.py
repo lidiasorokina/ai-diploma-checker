@@ -227,6 +227,11 @@ if st.button("AI-анализ введения 🤖"):
             full_method_text
         )
 
+        if not result:
+            result = "Ошибка: модель не вернула ответ."
+
+        result = str(result)
+
         result = result.replace("<br>", "\n")
         result = result.replace("|", "")
 
