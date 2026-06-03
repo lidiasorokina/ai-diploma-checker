@@ -6,8 +6,8 @@ import re
 load_dotenv()
 
 client = OpenAI(
-    api_key=os.getenv("OPENROUTER_API_KEY"),
-    base_url="https://openrouter.ai/api/v1"
+    api_key=os.getenv("CODEX_API_KEY"),
+    base_url="https://codex.sale/v1"
 )
 
 
@@ -132,9 +132,7 @@ def analyze_conclusion(text, method_text):
 """
 
     models = [
-        "qwen/qwen3-next-80b-a3b-instruct:free",
-        "meta-llama/llama-3.3-70b-instruct:free",
-        "google/gemma-4-26b-a4b-it:free"
+        "gpt-5.4-mini"
     ]
 
     for model_name in models:
