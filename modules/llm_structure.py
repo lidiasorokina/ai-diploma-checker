@@ -109,9 +109,10 @@ def analyze_structure(text, method_text):
 """
 
     models = [
-        "openai/gpt-oss-120b:free"
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "google/gemma-4-26b-a4b-it:free"
     ]
-
     for model_name in models:
 
         try:
