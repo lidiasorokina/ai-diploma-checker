@@ -80,9 +80,7 @@ def analyze_intro(text: str, method_text: str):
 """
 
     models = [
-        "openai/gpt-oss-120b:free",
-        "google/gemma-4-31b-it:free",
-        "openai/gpt-oss-20b:free"
+        "openrouter/free"
     ]
 
     for model_name in models:
@@ -113,14 +111,9 @@ def analyze_intro(text: str, method_text: str):
 
         except Exception as e:
 
-            import traceback
+            return (
+                f"Ошибка модели {model_name}:\n"
+                f"{str(e)}"
+            )
 
-            print("\n========================")
-            print(f"Модель: {model_name}")
-            print(f"Ошибка: {e}")
-            traceback.print_exc()
-            print("========================\n")
-
-            continue
-
-    return "Ошибка: все LLM модели временно недоступны"
+    return "Ошибка: ни одна LLM модель не смогла выполнить анализ."
