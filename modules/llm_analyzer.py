@@ -107,7 +107,16 @@ def analyze_intro(text: str, method_text: str):
                 max_tokens=700
             )
 
-            return response.choices[0].message.content
+            content = response.choices[0].message.content
+
+            if not content:
+                return (
+                    "Ошибка: OpenRouter вернул пустой ответ.\n"
+                    f"Модель: {model_name}\n"
+                    f"Ответ API: {response}"
+                )
+
+            return content
 
         except Exception as e:
 
@@ -115,5 +124,3 @@ def analyze_intro(text: str, method_text: str):
                 f"Ошибка модели {model_name}:\n"
                 f"{str(e)}"
             )
-
-    return "Ошибка: ни одна LLM модель не смогла выполнить анализ."
