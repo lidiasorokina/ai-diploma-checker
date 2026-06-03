@@ -132,10 +132,11 @@ def analyze_conclusion(text, method_text):
 """
 
     models = [
-        "google/gemma-3-27b-it:free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "openai/gpt-oss-120b:free",
+        "google/gemma-4-31b-it:free",
+        "openai/gpt-oss-20b:free"
     ]
-
+    
     for model_name in models:
         try:
             response = client.chat.completions.create(

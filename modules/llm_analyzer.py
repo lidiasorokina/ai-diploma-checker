@@ -80,8 +80,9 @@ def analyze_intro(text: str, method_text: str):
 """
 
     models = [
-        "openrouter/free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "openai/gpt-oss-120b:free",
+        "google/gemma-4-31b-it:free",
+        "openai/gpt-oss-20b:free"
     ]
 
     for model_name in models:
