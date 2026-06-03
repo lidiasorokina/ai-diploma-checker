@@ -232,6 +232,11 @@ if st.button("AI-анализ введения 🤖"):
 
         result = str(result)
 
+        if not result:
+            result = "Ошибка: модель не вернула ответ."
+
+        result = str(result)
+
         result = result.replace("<br>", "\n")
         result = result.replace("|", "")
 
@@ -278,6 +283,11 @@ if st.button("AI-анализ структуры 🤖"):
             structure_text,
             full_method_text
         )
+
+        if not result:
+            result = "Ошибка: модель не вернула ответ."
+
+        result = str(result)
 
         result = result.replace(
             "Комментарий: ",
@@ -338,6 +348,11 @@ if st.button("AI-анализ заключения 🤖"):
                 conclusion_text,
                 full_method_text
             )
+
+            if not result:
+                result = "Ошибка: модель не вернула ответ."
+
+            result = str(result)
 
             result = result.replace(
                 "Комментарий: ",
@@ -405,6 +420,11 @@ if st.button("AI-анализ литературы 🤖"):
                 literature_text,
                 full_method_text
             )
+
+            if not result:
+                result = "Ошибка: модель не вернула ответ."
+
+            result = str(result)
 
             result = result.replace(
                 "Комментарий: ",

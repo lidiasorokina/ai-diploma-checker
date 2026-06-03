@@ -132,8 +132,7 @@ def analyze_conclusion(text, method_text):
 """
 
     models = [
-        "openai/gpt-oss-120b:free",
-        "openrouter/free"
+        "openai/gpt-oss-120b:free"
     ]
 
     for model_name in models:
